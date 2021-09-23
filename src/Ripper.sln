@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ripper", "Ripper\Ripper.csproj", "{E68FB413-377E-4C75-B1AC-633F65DA123D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallet", "Wallet\Wallet.csproj", "{10EC5397-AA7E-4B93-A89C-725ED9029DD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E68FB413-377E-4C75-B1AC-633F65DA123D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E68FB413-377E-4C75-B1AC-633F65DA123D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E68FB413-377E-4C75-B1AC-633F65DA123D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E68FB413-377E-4C75-B1AC-633F65DA123D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10EC5397-AA7E-4B93-A89C-725ED9029DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10EC5397-AA7E-4B93-A89C-725ED9029DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10EC5397-AA7E-4B93-A89C-725ED9029DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10EC5397-AA7E-4B93-A89C-725ED9029DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4882C8A-356C-493B-B689-853064CE6AB6}
+	EndGlobalSection
+EndGlobal
