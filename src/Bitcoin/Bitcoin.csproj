@@ -1,20 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Bitcoin\Bitcoin.csproj" />
+    <None Include="Wallet.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="data\addresses.dat">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <PackageReference Include="BouncyCastle" Version="1.8.9" />
+    <PackageReference Include="Crypto.RIPEMD" Version="1.0.3" />
   </ItemGroup>
 
 </Project>
