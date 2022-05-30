@@ -1,8 +1,4 @@
 ﻿using Wallet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Ripper
 {
@@ -48,10 +44,10 @@ namespace Ripper
 
             var success = false;
 
-            var path = $@"data\batch.ini";
-            if (System.IO.File.Exists(path))
+            var path = $@"data/batch.ini";
+            if (File.Exists(path))
             {
-                success = long.TryParse(System.IO.File.ReadAllText(path), out metrics.contenderCount);
+                success = long.TryParse(File.ReadAllText(path), out metrics.contenderCount);
             }
 
             if (success == false)
@@ -59,11 +55,11 @@ namespace Ripper
                 metrics.contenderCount = 0;
 
                 // (Re)Create it.
-                System.IO.Directory.CreateDirectory("data");
-                System.IO.File.WriteAllText(path, metrics.contenderCount.ToString());
+                Directory.CreateDirectory("data");
+                File.WriteAllText(path, metrics.contenderCount.ToString());
             }
 
-            var a = System.IO.File.ReadAllLines("data/addresses.dat").ToList();
+            var a = File.ReadAllLines("data/addresses.dat").ToList();
             if (dedupe)
             {
                 a.ForEach(addr =>
@@ -74,16 +70,11 @@ namespace Ripper
                     }
                 });
 
-                System.IO.File.WriteAllLines("data/addresses.cleaned.dat", Addresses.ToArray());
+                File.WriteAllLines("data/addresses.cleaned.dat", Addresses.ToArray());
             }
             else
             {
                 Addresses = a;
-            }
-
-            for (var i = 0; i < 10; i++)
-            {
-                Console.Beep(320, 100);
             }
 
             isLoaded = true;
@@ -104,8 +95,8 @@ namespace Ripper
             {
                 if (metrics.contenderCount % 10000 == 0)
                 {
-                    var path = $@"data\batch.ini";
-                    System.IO.File.WriteAllText(path, metrics.contenderCount.ToString());
+                    var path = $@"data/batch.ini";
+                    File.WriteAllText(path, metrics.contenderCount.ToString());
 
                     ClearConsole();
                 }
@@ -146,15 +137,10 @@ namespace Ripper
             var matchCompressed = Addresses.Contains(btcCompressed);
             var matchUncompressed = Addresses.Contains(btcUncompressed);
             if (matchCompressed || matchUncompressed)
-            {
-                for (var i = 0; i < 100; i++)
-                {
-                    Console.Beep(3200, 100);
-                }
-
-                var path = $@"wallets\{ btcCompressed }.txt";
-                System.IO.Directory.CreateDirectory("wallets");
-                System.IO.File.WriteAllText(path, $"{ btcCompressed }\r\n{ btcUncompressed }\r\n{ privateKey }");
+            {                
+                var path = $@"wallets/{ btcCompressed }.txt";
+                Directory.CreateDirectory("wallets");
+                File.WriteAllText(path, $"{ btcCompressed }\r\n{ btcUncompressed }\r\n{ privateKey }");
             }
         }
 
